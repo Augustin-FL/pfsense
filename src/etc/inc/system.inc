@@ -2124,6 +2124,7 @@ function system_reboot_cleanup() {
 			captiveportal_radius_stop_all(7); // Admin-Reboot
 			/* Send Accounting-Off packet to the RADIUS server */
 			captiveportal_send_server_accounting('off');
+			unlink_if_exists("{$g['vardb_path']}/captiveportal{$cpzone}.db");
 		}
 		/* Remove the pipe database */
 		unlink_if_exists("{$g['vardb_path']}/captiveportaldn.rules");
