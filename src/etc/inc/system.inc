@@ -2114,7 +2114,7 @@ function system_reboot_sync($reroot=false) {
 
 function system_reboot_cleanup() {
 	global $config, $cpzone, $cpzoneid;
-
+	global $g;
 	mwexec("/usr/local/bin/beep.sh stop");
 	require_once("captiveportal.inc");
 	if (is_array($config['captiveportal'])) {
