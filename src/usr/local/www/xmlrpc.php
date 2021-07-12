@@ -341,27 +341,6 @@ class pfsense_xmlrpc_server {
 
 			foreach($sections['voucher'] as $zone => $item) {
 				unset($sections['voucher'][$zone]['roll']);
-				// Note : This code can be safely deleted once #97 fix has been applied and deployed to pfSense stable release.
-				// Please do not delete this code before
-				if (isset($config['voucher'][$zone]['vouchersyncdbip'])) {
-					$sections['voucher'][$zone]['vouchersyncdbip'] =
-					    $config['voucher'][$zone]['vouchersyncdbip'];
-				} else {
-					unset($sections['voucher'][$zone]['vouchersyncdbip']);
-				}
-				if (isset($config['voucher'][$zone]['vouchersyncusername'])) {
-					$sections['voucher'][$zone]['vouchersyncusername'] =
-					    $config['voucher'][$zone]['vouchersyncusername'];
-				} else {
-					unset($sections['voucher'][$zone]['vouchersyncusername']);
-				}
-				if (isset($config['voucher'][$zone]['vouchersyncpass'])) {
-					$sections['voucher'][$zone]['vouchersyncpass'] =
-					    $config['voucher'][$zone]['vouchersyncpass'];
-				} else {
-					unset($sections['voucher'][$zone]['vouchersyncpass']);
-				}
-				// End note.
 			}
 		}
 
